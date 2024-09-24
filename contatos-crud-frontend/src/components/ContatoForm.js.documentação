@@ -1,0 +1,27 @@
+Importações:
+
+React, useState: Importa a biblioteca React e o hook useState, que permite gerenciar o estado do componente.
+axios: Biblioteca para fazer requisições HTTP.
+useNavigate: Hook do React Router que permite redirecionar o usuário após uma ação, como o envio do formulário.
+Hooks useState:
+
+const [nome, setNome] = useState('');: Cria um estado para armazenar o nome do contato. Inicialmente, é uma string vazia.
+const [email, setEmail] = useState('');: Cria um estado para o email, inicialmente vazio.
+const [telefone, setTelefone] = useState('');: Cria um estado para o telefone, também inicialmente vazio.
+Função handleSubmit:
+
+É chamada quando o formulário é enviado. Recebe o evento e como argumento.
+e.preventDefault(): Previne o comportamento padrão do formulário, que seria recarregar a página.
+Um novo objeto novoContato é criado com os valores dos estados.
+axios.post(...): Faz uma requisição POST para a API para criar o novo contato.
+then(() => navigate('/contatos')): Se a requisição for bem-sucedida, o usuário é redirecionado para a lista de contatos.
+catch(...): Trata qualquer erro que possa ocorrer durante a requisição.
+Renderização:
+
+O componente retorna um formulário que contém campos para nome, email e telefone.
+Cada campo tem um rótulo (label) e um campo de entrada (input) controlado pelo estado.
+required: O atributo faz com que o campo seja obrigatório no envio do formulário.
+O formulário é enviado quando o botão "Criar Contato" é clicado.
+Controles de Formulário:
+
+Os campos de entrada (input) têm seus valores controlados pelo estado, e as mudanças são tratadas através do evento onChange, que atualiza o estado correspondente.

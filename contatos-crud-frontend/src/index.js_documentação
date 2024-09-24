@@ -1,0 +1,18 @@
+Explicação das Partes
+Importações:
+
+React: Necessário para utilizar a sintaxe JSX e criar componentes React.
+ReactDOM: Usado para interagir com o DOM do navegador, permitindo renderizar componentes React na página.
+./index.css: Arquivo CSS que contém estilos globais para a aplicação, importado para que os estilos sejam aplicados.
+App: O componente principal da aplicação, que contém a lógica de roteamento e exibe outros componentes.
+Renderização:
+
+ReactDOM.render(): Esta função é responsável por renderizar o componente React dentro do DOM.
+React.StrictMode: Um componente que ajuda a identificar problemas na aplicação. Ele ativa verificações e avisos adicionais, mas não altera o comportamento do aplicativo em produção.
+<App />: O componente App é renderizado dentro do React.StrictMode. Isso significa que todo o aplicativo é encapsulado nesse modo estrito, o que pode ajudar a detectar práticas não recomendadas e problemas de desempenho.
+Seleção do Elemento DOM:
+
+document.getElementById('root'): Seleciona o elemento HTML com o ID root, que é onde o aplicativo React será montado. Normalmente, você encontra esse elemento no arquivo public/index.html:
+html
+Copiar código
+<div id="root"></div>

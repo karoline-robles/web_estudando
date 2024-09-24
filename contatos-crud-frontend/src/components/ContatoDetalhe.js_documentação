@@ -1,0 +1,29 @@
+Importações:
+
+React, useState, useEffect: Importa a biblioteca React e hooks para gerenciar estado e efeitos colaterais.
+axios: Usado para fazer requisições HTTP.
+useParams, useNavigate: Hooks do React Router para acessar parâmetros da URL e navegar entre páginas.
+Hooks e Estados:
+
+const { id } = useParams();: Obtém o ID do contato da URL.
+const [contato, setContato] = useState(null);: Estado para armazenar os detalhes do contato.
+const [isEditing, setIsEditing] = useState(false);: Estado para gerenciar se está no modo de edição.
+const [nome, setNome] = useState('');, const [email, setEmail] = useState('');, const [telefone, setTelefone] = useState('');: Estados para os campos do formulário.
+const navigate = useNavigate();: Hook para redirecionar após ações como edição ou exclusão.
+useEffect:
+
+É usado para carregar os dados do contato assim que o componente é montado.
+A função fetchContato faz uma requisição GET à API para obter os detalhes do contato com base no ID.
+Os dados recebidos são armazenados nos estados correspondentes.
+Funções de Manipulação:
+
+handleDelete: Faz uma requisição DELETE para remover o contato e redireciona para a lista de contatos após a exclusão.
+handleSave: Faz uma requisição PUT para atualizar o contato e exibe uma mensagem de sucesso.
+Renderização:
+
+O componente renderiza um cabeçalho e exibe os detalhes do contato.
+Se isEditing for verdadeiro, exibe campos de entrada para editar o contato. Caso contrário, mostra os detalhes.
+Botões para salvar as alterações, habilitar a edição e excluir o contato.
+Mensagem de Carregamento:
+
+Se os detalhes do contato ainda não foram carregados (contato é null), exibe uma mensagem de carregamento.

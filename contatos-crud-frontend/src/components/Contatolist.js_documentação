@@ -1,0 +1,30 @@
+Importações:
+
+React, useState, useEffect: O React e seus hooks permitem criar componentes funcionais que gerenciam estado e efeitos colaterais.
+axios: Biblioteca para fazer requisições HTTP, facilitando a comunicação com a API.
+Link, useNavigate: Componentes e hook do React Router que permitem navegação entre diferentes páginas.
+Hook useState:
+
+const [contatos, setContatos] = useState([]);: Cria um estado para armazenar a lista de contatos. Inicialmente, é um array vazio.
+Hook useEffect:
+
+Usado para carregar a lista de contatos assim que o componente é montado. Faz uma requisição GET para a API e atualiza o estado com os dados recebidos.
+O array vazio [] como segundo argumento garante que o efeito seja executado apenas uma vez.
+Função handleDelete:
+
+Esta função é chamada quando o usuário clica em "Excluir". Ela faz uma requisição DELETE para remover um contato específico.
+Após a exclusão, a lista de contatos é atualizada para refletir a remoção.
+Renderização:
+
+O componente retorna um JSX que inclui um título, uma tabela que exibe os contatos e botões para ações (editar, excluir).
+A tabela é populada usando o método map para iterar sobre a lista de contatos e criar uma linha para cada um.
+O key é atribuído a cada <tr> para ajudar o React a identificar quais itens mudaram, foram adicionados ou removidos.
+Links e Botões:
+
+Link: Usado para criar links que permitem a navegação entre diferentes rotas da aplicação.
+Botões para "Ver Detalhes / Editar" e "Excluir" executam ações específicas associadas a cada contato.
+Conclusão
+O componente ContatosList é responsável por exibir uma lista de contatos, permitindo ao usuário visualizar, editar e excluir contatos. Ele utiliza o useEffect para carregar os dados da API e o useState para gerenciar a lista de contatos, mantendo a interface do usuário atualizada com as ações do usuário.
+
+
+

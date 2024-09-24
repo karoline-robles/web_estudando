@@ -1,0 +1,37 @@
+Importação de Dependências:
+
+const express = require('express');: Importa o framework Express, que facilita a criação de servidores e rotas.
+const router = express.Router();: Cria um novo roteador que será usado para definir as rotas relacionadas aos contatos.
+const Contato = require('../models/Contato');: Importa o modelo Contato para interagir com a coleção de contatos no banco de dados.
+Rota para Listar Contatos:
+
+router.get('/', async (req, res) => { ... });: Define a rota GET que retorna todos os contatos.
+const contatos = await Contato.find();: Utiliza o método find() para buscar todos os documentos da coleção Contato.
+res.json(contatos);: Retorna os contatos em formato JSON.
+Rota para Criar Novo Contato:
+
+router.post('/', async (req, res) => { ... });: Define a rota POST para criar um novo contato.
+const { nome, email, telefone } = req.body;: Desestrutura os dados do corpo da requisição.
+if (!nome) return res.status(400).json({ message: 'O nome é obrigatório.' });: Valida se o nome foi fornecido, retornando um erro 400 se não for.
+const novoContato = new Contato({ nome, email, telefone });: Cria uma nova instância do modelo Contato.
+await novoContato.save();: Salva o novo contato no banco de dados.
+res.status(201).json(novoContato);: Retorna o contato criado com status 201.
+Rota para Detalhes de um Contato:
+
+router.get('/:id', async (req, res) => { ... });: Define a rota GET que busca um contato específico pelo ID.
+const contato = await Contato.findById(req.params.id);: Usa o método findById() para buscar o contato com o ID fornecido na URL.
+if (!contato) return res.status(404).json({ message: 'Contato não encontrado.' });: Retorna um erro 404 se o contato não for encontrado.
+res.json(contato);: Retorna os detalhes do contato.
+Rota para Editar um Contato:
+
+router.put('/:id', async (req, res) => { ... });: Define a rota PUT para editar um contato existente.
+const contatoAtualizado = await Contato.findByIdAndUpdate(req.params.id, { nome, email, telefone }, { new: true });: Atualiza o contato com os dados fornecidos e retorna o novo documento.
+res.json(contatoAtualizado);: Retorna o contato atualizado.
+Rota para Deletar um Contato:
+
+router.delete('/:id', async (req, res) => { ... });: Define a rota DELETE para remover um contato pelo ID.
+await Contato.findByIdAndDelete(req.params.id);: Deleta o contato com o ID fornecido.
+res.json({ message: 'Contato excluído com sucesso!' });: Retorna uma mensagem de sucesso.
+Exportação do Roteador:
+
+module.exports = router;: Exporta o roteador para que possa ser utilizado em outros arquivos, como o arquivo principal do servidor.

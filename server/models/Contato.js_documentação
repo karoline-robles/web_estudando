@@ -1,0 +1,18 @@
+Importação do Mongoose:
+
+const { Schema, model } = require('mongoose');: Importa as funções Schema e model da biblioteca mongoose. O Schema é usado para definir a estrutura dos documentos, enquanto model é usado para criar um modelo baseado nesse esquema.
+Definição do Esquema:
+
+const contatoSchema = new Schema({ ... });: Cria um novo esquema chamado contatoSchema que define a estrutura de um contato.
+Dentro do esquema, definimos três campos:
+nome: { type: String, required: true }: O campo nome é do tipo String e é obrigatório. Isso significa que um contato deve ter um nome para ser salvo no banco de dados.
+email: String: O campo email é do tipo String e é opcional. Isso significa que um contato pode ter um email, mas não é necessário.
+telefone: String: O campo telefone também é do tipo String e é opcional.
+Criação do Modelo:
+
+const Contato = model('Contato', contatoSchema);: Cria um modelo chamado Contato usando o contatoSchema definido anteriormente. Esse modelo é usado para interagir com a coleção de contatos no banco de dados MongoDB.
+Exportação do Modelo:
+
+module.exports = Contato;: Exporta o modelo Contato para que possa ser utilizado em outros arquivos da aplicação, como em rotas ou serviços.
+Conclusão
+O arquivo Contato.js define o modelo de dados para os contatos na aplicação. Ele especifica quais campos um contato deve ter e como esses campos devem ser estruturados, utilizando o Mongoose para facilitar a interação com o MongoDB. Essa abordagem modular facilita a manutenção e a reutilização do código em uma aplicação Node.js.

@@ -1,0 +1,150 @@
+Lista preferida de Bibliotecas Utilizadas no Projeto
+Aqui está uma documentação mais detalhada sobre as bibliotecas usadas em seu projeto de Gerenciamento de Contatos com React no front-end e Express com MongoDB no back-end.
+
+Bibliotecas do Front-end (React)
+1. Reagir ( react)
+Descrição : Biblioteca principal para construção de interfaces de usuário. Ela permite que você crie componentes reutilizáveis, que atualizem a interface da aplicação de forma eficiente e reativa, sem recarregar a página inteira.
+Link : React - Documentação Oficial
+Instalação :
+bater
+Copiar código
+npm install react
+
+
+2. Reaja DOM ( react-dom)
+Descrição : É uma biblioteca que integra o React com a árvore do DOM (Document Object Model). Ela permite que o React manipule diretamente os elementos HTML no navegador.
+Link : React DOM - Documentação Oficial
+Instalação :
+bater
+Copiar código
+npm install react-dom
+
+
+3. Roteador React DOM ( react-router-dom)
+Descrição : Biblioteca usada para gerenciar a navegação entre diferentes páginas em uma aplicação React. Com o React Router , você pode criar rotas, definir quais componentes aparecerão com base na URL e gerenciar a navegação entre páginas.
+Principais Funcionalidades :
+Definir rotas com <Route>.
+Navegar entre páginas com <Link>.
+Obter parâmetros da URL com useParams().
+Link : React Router - Documentação Oficial
+Instalação :
+bater
+Copiar código
+npm install react-router-dom
+
+
+4. Axios ( axios)
+Descrição : Biblioteca para fazer requisições HTTP (GET, POST, PUT, DELETE) de forma simples e eficiente. É usado para se comunicar com APIs RESTful, como o back-end de sua aplicação Express.
+Principais Funcionalidades :
+Fazer chamadas HTTP como GET , POST , PUT , DELETE .
+Respostas manipuláveis ​​e erros facilmente.
+Suporte a Promises e async/await .
+Link : Axios - Documentação Oficial
+Instalação :
+bater
+Copiar código
+npm install axios
+
+
+5. Concomitantemente ( concurrently)
+Descrição : Ferramenta que permite rodar múltiplos comandos ao mesmo tempo no terminal. No caso do seu projeto, pode ser usado para iniciar tanto o front-end quanto o back-end com um único comando.
+Principais Funcionalidades :
+Executar múltiplos scripts simultaneamente.
+Muito útil para rodar servidores front-end e back-end ao mesmo tempo.
+Link : Simultaneamente - GitHub
+Instalação :
+bater
+Copiar código
+npm install concurrently --save-dev
+
+
+
+Bibliotecas do Back-end (Node.js com Express)
+6. Expresso ( express)
+Descrição : Framework web para Node.js que facilita a criação de servidores web e APIs. Ele gerencia rotas, middleware, manipulação de requisições HTTP e muito mais.
+Principais Funcionalidades :
+Definir rotas HTTP (GET, POST, PUT, DELETE).
+Middleware para processar requisições e respostas.
+Extensível com diversas bibliotecas de middleware.
+Link : Express - Documentação Oficial
+Instalação :
+bater
+Copiar código
+npm install express
+
+
+7. Mangusto ( mongoose)
+Descrição : Biblioteca de modelagem de dados para MongoDB e Node.js. O Mongoose permite a definição de esquemas para documentos MongoDB e facilita as operações de CRUD (Create, Read, Update, Delete) no banco de dados.
+Principais Funcionalidades :
+Definição de esquemas de dados.
+Validação de dados.
+Operações CRUD no MongoDB.
+Link : Mongoose - Documentação Oficial
+Instalação :
+bater
+Copiar código
+npm install mongoose
+
+
+8. Cors ( cors)
+Descrição : Middleware para habilitar CORS (Cross-Origin Resource Sharing) em suas APIs. Isso é necessário quando o front-end (React) e o back-end (Express) estão rodando em diferentes origens (diferentes portas ou domínios).
+Principais Funcionalidades :
+Habilitar o compartilhamento de recursos entre diferentes origens.
+Soluciona problemas de segurança no navegador ao fazer requisições entre domínios.
+Link : Cors - Documentação Oficial
+Instalação :
+bater
+Copiar código
+npm install cors
+
+
+
+Ferramentas de Desenvolvimento
+9. Nódemon ( nodemon)
+Descrição : Ferramenta de desenvolvimento que reinicia automaticamente o servidor Node.js sempre que alterações sejam bloqueadas no código. Facilita o desenvolvimento do back-end, pois evita que você precise parar e iniciar o servidor manualmente.
+Principais Funcionalidades :
+Monitore mudanças nos arquivos.
+Reinicialize automaticamente o servidor quando houver alterações no código.
+Link : Nodemon - GitHub
+Instalação :
+bater
+Copiar código
+npm install nodemon --save-dev
+
+
+
+Exemplo de como o package.jsonpode ficar:
+Aqui está um exemplo do seu arquivo package.jsoncom todas as dependências necessárias:
+json
+Copiar código
+{
+  "name": "contact_manager",
+  "version": "1.0.0",
+  "scripts": {
+    "server": "nodemon server.js",
+    "client": "npm start --prefix contatos-crud-frontend",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "nodemon": "^2.0.15"
+  }
+}
+
+Explicação dos Scripts :
+"server": "nodemon server.js": Esse script inicia o servidor back-end com Nodemon , que monitora as alterações no código e reinicia automaticamente o servidor.
+"client": "npm start --prefix contatos-crud-frontend": Inicia o front-end React na pasta contatos-crud-frontend .
+"start": "concurrently \"npm run server\" \"npm run client\"": Usa o Concurrently para rodar o servidor back-end e o front-end ao mesmo tempo com um único comando.
+
+Conclusão
+Essas bibliotecas e ferramentas são a base para o funcionamento do projeto de Gerenciamento de Contatos . Eles facilitam a criação de um front-end em React e um back-end em Express , com persistência de dados no MongoDB .
+Se você tiver alguma dúvida sobre como configurar ou usar qualquer uma dessas bibliotecas, sinta-se à vontade para perguntar!

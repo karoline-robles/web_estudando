@@ -1,0 +1,30 @@
+Explicação das Partes
+Importações:
+
+React: A biblioteca principal que permite criar componentes.
+BrowserRouter, Route, Routes: Componentes do React Router que permitem criar rotas no aplicativo. O Router é o componente que habilita a navegação entre as diferentes páginas.
+Componentes Importados:
+
+ContatosList: Componente responsável por listar todos os contatos.
+ContatoForm: Componente que permite criar um novo contato ou editar um existente.
+ContatoDetalhes: Componente que exibe os detalhes de um contato específico.
+Função App:
+
+A função App é o componente principal do seu aplicativo.
+O componente retorna JSX, que é a sintaxe usada pelo React para descrever a UI.
+Router:
+
+O componente <Router> envolve todo o conteúdo para habilitar a navegação entre diferentes rotas.
+Título da Aplicação:
+
+Um elemento <h1> que serve como título do aplicativo.
+Routes:
+
+O componente <Routes> contém todas as definições de rotas da aplicação.
+Cada <Route> define uma rota específica:
+path="/contatos": Quando o usuário acessa esta rota, o componente ContatosList é renderizado.
+path="/contatos/novo": Rota para o formulário de criação de um novo contato.
+path="/contatos/:id": Rota para ver os detalhes de um contato. O :id é um parâmetro que representa o identificador do contato, permitindo que você exiba informações específicas.
+Exportação:
+
+export default App: Isso permite que o componente App seja importado e usado em outros arquivos, como o ponto de entrada da sua aplicação.

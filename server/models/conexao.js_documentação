@@ -1,0 +1,21 @@
+Importação do Mongoose:
+
+const mongoose = require('mongoose');: Importa o módulo mongoose, que é uma biblioteca para modelar objetos MongoDB e gerenciar conexões com o banco de dados.
+Definição da URL de Conexão:
+
+const server = 'localhost';: Define o endereço do servidor MongoDB. Neste caso, está usando o localhost, o que significa que o banco de dados está rodando na mesma máquina.
+const database = 'contatos';: Define o nome do banco de dados que será utilizado. Aqui, o banco de dados se chama contatos.
+const port = 27017;: Define a porta na qual o MongoDB está escutando. A porta padrão é 27017.
+const url = mongodb://${server}:${port}/${database};: Monta a URL de conexão usando as variáveis definidas.
+Função de Conexão:
+
+const conectarBancoDeDados = async () => { ... }: Define uma função assíncrona que tenta conectar ao banco de dados.
+console.log('Tentando conectar ao banco de dados...');: Exibe uma mensagem no console para indicar que a conexão está sendo tentada.
+await mongoose.connect(url);: Tenta estabelecer a conexão com o MongoDB usando a URL definida. O await é utilizado para esperar que a conexão seja concluída antes de continuar.
+console.log('Conexão estabelecida com sucesso!');: Se a conexão for bem-sucedida, uma mensagem é exibida.
+O bloco try...catch é usado para capturar qualquer erro que ocorra durante a tentativa de conexão. Se ocorrer um erro, ele é exibido no console e lançado novamente para ser tratado em outro lugar.
+Exportação da Função:
+
+module.exports = { conectarBancoDeDados };: Exporta a função conectarBancoDeDados para que possa ser utilizada em outros arquivos do projeto, como no arquivo principal do servidor.
+Conclusão
+O arquivo conexao.js é responsável por definir a lógica de conexão com o banco de dados MongoDB. Ele utiliza o mongoose para gerenciar a conexão e oferece uma função que pode ser chamada em outras partes da aplicação para estabelecer essa conexão. Essa estrutura é comum em aplicações Node.js que utilizam MongoDB como banco de dados.
